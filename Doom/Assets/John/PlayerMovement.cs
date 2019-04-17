@@ -62,7 +62,7 @@ public class PlayerMovement: MonoBehaviour
 		rotationY = Mathf.Clamp(rotationY, minY, maxY);
 		Camera.main.transform.localEulerAngles = new Vector3(rotationY, 0, 0);
 
-		isGrounded = Physics.Raycast(transform.position, Vector3.down, .1f);
+		isGrounded = Physics.Raycast(transform.position, Vector3.down, 1f);
 
         if(Input.GetButtonDown("Jump") && ((isGrounded) || (doubleJump)))
         {
