@@ -2,24 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pistol : MonoBehaviour, IWeapon
+public class Gun : MonoBehaviour, IWeapon
 {
-	public float reloadTime = 5;
+    public float reloadTime = 5;
     [Tooltip("The higher the interval the faster the gun will fire.")]
-	public float fireInterval = 1;
-	public int damage = 1;
-	public int clipSize = 5;
-	public int currClip;
+    public float fireInterval = 1;
+    public int damage = 1;
+    public int clipSize = 5;
+    public int currClip;
+    public int ammo = 0;
 
-	private float nextTimetoFire = 0;
+    private float nextTimetoFire = 0;
 
-	void Start()
-	{
-		currClip = clipSize;
-	}
-
-	public void Fire()
-	{
+    public void Fire()
+    {
         if (currClip > 0 && Time.time >= nextTimetoFire)
         {
             nextTimetoFire = Time.time + 1 / fireInterval;
@@ -39,15 +35,24 @@ public class Pistol : MonoBehaviour, IWeapon
     }
 
     public void Reload()
-	{
+    {
+        ammo += currClip;
         currClip = 0;
         StartCoroutine(ReloadingTime());
-	}
+    }
 
     IEnumerator ReloadingTime()
     {
         yield return new WaitForSeconds(reloadTime);
-        currClip = clipSize;
+        if (clipSize > ammo)
+        {
+            currClip = ammo;
+            ammo = 0;
+        }
+        else
+        {
+            ammo -= clipSize;
+            currClip = clipSize;
+        }
     }
-
 }
