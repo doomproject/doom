@@ -13,8 +13,13 @@ public class PlayerMovement: MonoBehaviour
     [Tooltip("How fast the player can rotate.")]
     public float rotateSpeed;
 
-    //Total force of the player to send it in a direction.
-    Vector3 totalForce = Vector3.zero;
+	float rotationY = 0f;
+	public float sensitivityY = 15;
+	public float minY = -60;
+	public float maxY = 60;
+
+	//Total force of the player to send it in a direction.
+	Vector3 totalForce = Vector3.zero;
 
     [Tooltip("How high the player can jump once.")]
     public float jumpForce = 3f;
@@ -23,13 +28,15 @@ public class PlayerMovement: MonoBehaviour
     [Tooltip("Whether or not the player has used double jump.")]
     [SerializeField] bool doubleJump = false;
     [Tooltip("The rigidbody of the player.")]
-    public Rigidbody rb;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+		rb = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -49,7 +56,13 @@ public class PlayerMovement: MonoBehaviour
 
         transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * Time.deltaTime * rotateSpeed);
 
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, .1f);
+		//Up and down rotation
+		rotationY -= Input.GetAxis("Mouse Y") * sensitivityY;
+
+		rotationY = Mathf.Clamp(rotationY, minY, maxY);
+		Camera.main.transform.localEulerAngles = new Vector3(rotationY, 0, 0);
+
+		isGrounded = Physics.Raycast(transform.position, Vector3.down, .1f);
 
         if(Input.GetButtonDown("Jump") && ((isGrounded) || (doubleJump)))
         {

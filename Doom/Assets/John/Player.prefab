@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 7643663271152570277}
   - component: {fileID: 7643663271142240101}
   - component: {fileID: 7643663271155477696}
-  - component: {fileID: 7643663271155477698}
+  - component: {fileID: 1241230772}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -118,14 +118,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7643663271155477699}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0.00000028088027}
   m_LocalPosition: {x: 2.1183395, y: 1.13, z: 1.1893799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7643663271155445989}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 179.99998, z: 0}
 --- !u!54 &7643663271152570277
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -168,15 +168,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61cdcaf0a8182044788ee08deba211a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 0
-  reverseSpeed: 0
-  strafeSpeed: 0
-  rotateSpeed: 0
+  walkSpeed: 5
+  reverseSpeed: 5
+  strafeSpeed: 5
+  rotateSpeed: 5
   jumpForce: 3
   isGrounded: 0
   doubleJump: 0
   rb: {fileID: 0}
---- !u!114 &7643663271155477698
+--- !u!114 &1241230772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,8 +185,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7643663271155477699}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe0ab8abc3189614e96b548c834553cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fe8d4f1afe80c347ae36efda7e82061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 100
-  currentArmor: 50
