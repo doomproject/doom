@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
         currentArmor = maxArmor;
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         if (currentArmor > 0) //If armor is greater than 0.
         {

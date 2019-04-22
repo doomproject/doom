@@ -5,9 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     [Tooltip("The current weapon the player character is holding.")]
-    public GameObject currWeapon;
-    [Tooltip("The current ammo for the shotgun that the player has.")]
-    public int shotgunAmmo = 0;
+    private GameObject currWeapon;
 
     [Tooltip("The list of weapons that the player has.")]
     public List<GameObject> weaponList;
@@ -46,7 +44,14 @@ public class PlayerInventory : MonoBehaviour
 			player.currWeapon = currWeapon;
 			currWeapon.gameObject.SetActive(true);
 		}
-    }
+		else if (Input.GetKeyDown("4"))
+		{
+			currWeapon.gameObject.SetActive(false);
+			currWeapon = weaponList[3];
+			player.currWeapon = currWeapon;
+			currWeapon.gameObject.SetActive(true);
+		}
+	}
 
     private void OnTriggerEnter(Collider other)
     {

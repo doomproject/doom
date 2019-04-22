@@ -12,6 +12,8 @@ public class Gun : MonoBehaviour, IWeapon
     public int currClip;
     public int ammo = 0;
 
+	public ParticleSystem muzzleFlash;
+
     private float nextTimetoFire = 0;
 
     public void Fire()
@@ -20,6 +22,7 @@ public class Gun : MonoBehaviour, IWeapon
         {
             nextTimetoFire = Time.time + 1 / fireInterval;
             currClip -= 1;
+			muzzleFlash.Play();
 
             RaycastHit hit;
 
