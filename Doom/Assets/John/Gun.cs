@@ -16,6 +16,20 @@ public class Gun : MonoBehaviour, IWeapon
 
     private float nextTimetoFire = 0;
 
+    void Awake()
+    {
+        if (clipSize > ammo)
+        {
+            currClip = ammo;
+            ammo = 0;
+        }
+        else
+        {
+            ammo -= clipSize;
+            currClip = clipSize;
+        }
+    }
+
     public void Fire()
     {
         if (currClip > 0 && Time.time >= nextTimetoFire)

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmmoPickUp : MonoBehaviour
+public class AmmoPickUp : MonoBehaviour, IPickup
 {
     public GameObject weapon;
     public int ammoAmount = 7;
@@ -14,12 +14,10 @@ public class AmmoPickUp : MonoBehaviour
             Debug.LogError("Weapon has not been set for ammo pickup, please set a weapon.");
         }
     }
-    private void OnCollisionEnter(Collision other)
+
+    public void Pickup()
     {
-        if (other.gameObject == GameObject.FindGameObjectWithTag("Player"))
-        {
-            weapon.GetComponent<Gun>().ammo += ammoAmount;
-            Destroy(this.gameObject);
-        }
+        weapon.GetComponent<Gun>().ammo += ammoAmount;
+        Destroy(this.gameObject);
     }
 }

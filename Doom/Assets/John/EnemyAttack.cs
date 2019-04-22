@@ -6,13 +6,17 @@ public class EnemyAttack : MonoBehaviour
 {
     [Tooltip("The amount of damage the enemy deals to the player.")]
     public int damage = 5;
-    [Tooltip("Cooldown which the enemy attacks at when 0.")]
-    [SerializeField] float atkCooldown = 5;
+    [Tooltip("The higher the interval the faster the enemy will attack.")]
+    public float fireInterval = 1;
+    [Tooltip("The range of the enemy.")]
+    public int range = 10;
 
     //Player gameobject.
-	private GameObject player;
+    private GameObject player;
 
-	private void Awake()
+    private float nextTimetoFire = 0;
+
+    private void Awake()
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
 	}
@@ -20,18 +24,19 @@ public class EnemyAttack : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-		atkCooldown -= Time.deltaTime;
-    }
+        if (Time.time >= nextTimetoFire)
+        {
+            nextTimetoFire = Time.time + 1 / fireInterval;
+            RaycastHit hit;
 
-	private void OnTriggerStay(Collider other)
-	{
-		if (other.transform.gameObject == player)
-		{
-			if (atkCooldown < 0)
-			{
-				atkCooldown = 5;
-				player.GetComponent<PlayerHealth>().TakeDamage(damage);
-			}
-		}
-	}
+            if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range))
+            {
+                PlayerHealth PH = hit.transform.GetComponent<PlayerHealth>();
+                if (PH != null)
+                {
+                    PH.TakeDamage(damage);
+                }
+            }
+        }
+    }
 }

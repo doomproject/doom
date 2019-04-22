@@ -51,13 +51,21 @@ public class PlayerInventory : MonoBehaviour
 			player.currWeapon = currWeapon;
 			currWeapon.gameObject.SetActive(true);
 		}
-	}
+        else if (Input.GetKeyDown("5"))
+        {
+            currWeapon.gameObject.SetActive(false);
+            currWeapon = weaponList[4];
+            player.currWeapon = currWeapon;
+            currWeapon.gameObject.SetActive(true);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == GameObject.FindGameObjectWithTag("Pickup"))
+        IPickup pickup = other.GetComponent<IPickup>();
+        if (pickup != null)
         {
-
+            pickup.Pickup(); //Do something when you hit the object
         }
     }
 }
