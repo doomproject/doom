@@ -1,0 +1,13 @@
+Ideally, the shield should fill radially. (Like a pie chart.)
+
+The health bar will fill from left to right, but the outline will stay stagnant. Keep healthBarFill behind healthBarOutline.
+
+When the gun is selected, the triangle at the top of the box will point to it. 
+
+The gun as well as the box will grow slightly. (Probably by about 10 according to Unity's means of measurement)
+
+The ammo icon will change according to the weapon equipped, and the grappling ammo will always be shown to the right of it.
+
+Don't mind the random red colors on the PSD of the HUD, I just put those there to make sure the outlines I made for some of the assets looked good.
+** Still need to think about how the knife is communicated when thrown as well as its cooldown.
+** Would it be too much to add a little bit of light to nearby ammo pickups + the knife?
