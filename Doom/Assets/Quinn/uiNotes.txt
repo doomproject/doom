@@ -1,6 +1,12 @@
 Ideally, the shield should fill radially. (Like a pie chart.)
 
-The health bar will fill from left to right, but the outline will stay stagnant. Keep healthBarFill behind healthBarOutline.
+The sprite for the shield should change from fullShield to notFullShield when the shield is less than the maximum.
+
+The health bar will fill from left to right, but the outline will stay stagnant.
+
+The text will give the amount of health a numerical value as a fraction. (ex. 75/100)
+
+** These parts haven't been implemented yet, I'll add these when I'm on a computer with the right aspect ratio.**
 
 When the gun is selected, the triangle at the top of the box will point to it. 
 
