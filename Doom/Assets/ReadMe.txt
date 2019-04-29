@@ -22,7 +22,7 @@ NOTE: Do NOT mess around in scenes that other people are working in, this will b
  Create level transition. - DONE
  Create a pause menu. - DONE
  Create a knife weapon object. - DONE
- Add basic animations to guns, make it shoot bullets.
+ Add basic animations to guns, make it shoot bullets. - DONE
  If UI  is added program health, sheilds, etc. to display.
 
  5/06

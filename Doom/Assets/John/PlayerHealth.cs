@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     [Tooltip("Player's max health.")]
-    int maxHealth = 100;
+    public int maxHealth = 100;
     public int currentHealth = 100;
 
-    int maxArmor = 50;
+    public int maxArmor = 50;
     public int currentArmor = 50;
 
     void Awake()
