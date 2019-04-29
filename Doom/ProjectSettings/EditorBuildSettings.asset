@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Quinn/MainMenu/mainMenu.unity
+    guid: f203c706105284b45b2af3c66ae094f6
+  - enabled: 1
+    path: Assets/bobby/graplekillerunderground.unity
+    guid: b71ab1613e4adea4a949de4bc9d4d1ed
+  - enabled: 1
+    path: Assets/Quinn/OutdoorLevel.unity
+    guid: 15f04e8b179720a47b9d4ae7f7c842be
   m_configObjects: {}
