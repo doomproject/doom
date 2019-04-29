@@ -12,11 +12,13 @@ public class UI_Health : MonoBehaviour
     public Text shieldText;
 
     private PlayerHealth player;
+    IWeapon weapon;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        weapon = GameObject.FindGameObjectWithTag("Player").GetComponent<IWeapon>();
     }
 
     // Update is called once per frame

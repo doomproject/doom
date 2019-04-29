@@ -26,7 +26,10 @@ NOTE: Do NOT mess around in scenes that other people are working in, this will b
  If UI  is added program health, sheilds, etc. to display.
 
  5/06
- Change the AI so it has a range or specific area which it can't go into.
+ Change the AI so it has a certain distance to detect and attack the player at.
  Add enemies which can attack at a range. - DONE?
  Finish grapple hook system.
+ Finish UI.
+ Change enemies to mech and make them attack.
+
 */
