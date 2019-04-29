@@ -20,7 +20,7 @@ NOTE: Do NOT mess around in scenes that other people are working in, this will b
  4/29
  Health and armor pickups. - DONE
  Create level transition. - DONE
- Create a pause menu.
+ Create a pause menu. - DONE
  Create a knife weapon object. - DONE
  Add basic animations to guns, make it shoot bullets.
  If UI  is added program health, sheilds, etc. to display.

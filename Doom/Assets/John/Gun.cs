@@ -12,7 +12,11 @@ public class Gun : MonoBehaviour, IWeapon
     public int currClip;
     public int ammo = 0;
 
+	public GameObject bullet;
+	[SerializeField] int bulletSpeed = 100;
 	public ParticleSystem muzzleFlash;
+
+	public Animator animator;
 
     private float nextTimetoFire = 0;
 
@@ -30,6 +34,11 @@ public class Gun : MonoBehaviour, IWeapon
         }
     }
 
+	void OnEnable()
+	{
+		animator.SetBool("Reloading", false);
+	}
+
     public void Fire()
     {
         if (currClip > 0 && Time.time >= nextTimetoFire)
@@ -42,7 +51,10 @@ public class Gun : MonoBehaviour, IWeapon
 
             if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, 100))
             {
-                EnemyHealth EH = hit.transform.GetComponent<EnemyHealth>();
+				GameObject go = Instantiate(bullet, muzzleFlash.transform.position, muzzleFlash.transform.rotation);
+				go.GetComponent<Rigidbody>().velocity = (hit.point - transform.position).normalized * bulletSpeed;
+				Destroy(go, 5f);
+				EnemyHealth EH = hit.transform.GetComponent<EnemyHealth>();
                 if (EH != null)
                 {
                     EH.TakeDamage(damage);
@@ -60,8 +72,13 @@ public class Gun : MonoBehaviour, IWeapon
 
     IEnumerator ReloadingTime()
     {
-        yield return new WaitForSeconds(reloadTime);
-        if (clipSize > ammo)
+		animator.SetBool("Reloading", true);
+		yield return new WaitForSeconds(reloadTime - .25f);
+
+		animator.SetBool("Reloading", false);
+		yield return new WaitForSeconds(.25f);
+
+		if (clipSize > ammo)
         {
             currClip = ammo;
             ammo = 0;
