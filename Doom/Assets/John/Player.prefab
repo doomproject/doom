@@ -8597,9 +8597,9 @@ ParticleSystem:
     ratio: 0.1
     light: {fileID: 1448674642}
     randomDistribution: 1
-    color: 0
-    range: 0
-    intensity: 0
+    color: 1
+    range: 1
+    intensity: 1
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -8706,7 +8706,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 20
+    maxLights: 1
   TrailModule:
     enabled: 0
     mode: 0
@@ -9643,7 +9643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1448674641
 Transform:
   m_ObjectHideFlags: 0
@@ -9955,6 +9955,7 @@ MonoBehaviour:
   bullet: {fileID: 1188905148038005028, guid: 4e7fb70c04c57f149b082aee089703b2, type: 3}
   bulletSpeed: 100
   muzzleFlash: {fileID: 492589334}
+  animator: {fileID: 8722700447673753651}
 --- !u!1 &5795208925466818288
 GameObject:
   m_ObjectHideFlags: 0
@@ -11487,6 +11488,7 @@ MonoBehaviour:
   bullet: {fileID: 3991158264067816815, guid: c8fe57e8154a27a40b4298fd11636979, type: 3}
   bulletSpeed: 100
   muzzleFlash: {fileID: 389259348}
+  animator: {fileID: 8722700447673753651}
 --- !u!1 &7643663271155477697
 GameObject:
   m_ObjectHideFlags: 0
@@ -11693,7 +11695,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f74559dfc5a507478d4698296f3e444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   currentHealth: 100
+  maxArmor: 50
   currentArmor: 50
 --- !u!114 &1241230777
 MonoBehaviour:
@@ -11722,6 +11726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6233133288652247091}
+  - component: {fileID: 8722700447673753651}
   m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -11748,3 +11753,22 @@ Transform:
   m_Father: {fileID: 7643663271155445989}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &8722700447673753651
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722700447673753650}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 432f11840cd591f4fbbda7748c665ba8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
