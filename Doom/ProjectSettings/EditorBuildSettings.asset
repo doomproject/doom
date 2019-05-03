@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Quinn/OutdoorLevel.unity
     guid: 15f04e8b179720a47b9d4ae7f7c842be
+  - enabled: 1
+    path: Assets/bobby/credits.unity
+    guid: acf4b2f1b5e260f4391ee5a8a49c55ee
   m_configObjects: {}
