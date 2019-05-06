@@ -11,14 +11,20 @@ public class EnemyAttack : MonoBehaviour
     [Tooltip("The range of the enemy.")]
     public int range = 10;
 
-    //Player gameobject.
-    private GameObject player;
+	[Tooltip("The flash for when the weapon fires.")]
+	public GameObject fireEffect;
+	[Tooltip("The position to fire from.")]
+	public Transform barrelEnd;
+	//Player gameobject.
+	private GameObject player;
 
     private float nextTimetoFire = 0;
+	private Animator animator;
 
     private void Awake()
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
+		animator = this.gameObject.GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -26,12 +32,16 @@ public class EnemyAttack : MonoBehaviour
     {
         if (Time.time >= nextTimetoFire)
         {
-            nextTimetoFire = Time.time + 1 / fireInterval;
+			animator.SetBool("Shooting", false);
+			nextTimetoFire = Time.time + 1 / fireInterval;
             RaycastHit hit;
 
-            if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range))
+            if (Physics.Raycast(this.transform.position, player.transform.position - this.transform.position, out hit, range))
             {
-                PlayerHealth PH = hit.transform.GetComponent<PlayerHealth>();
+				animator.SetBool("Shooting", true);
+				Instantiate(fireEffect, barrelEnd.transform.position, barrelEnd.transform.rotation);
+
+				PlayerHealth PH = hit.transform.GetComponent<PlayerHealth>();
                 if (PH != null)
                 {
                     PH.TakeDamage(damage);

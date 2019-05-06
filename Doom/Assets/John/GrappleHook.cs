@@ -19,7 +19,7 @@ public class GrappleHook : MonoBehaviour, IWeapon
 		//Check the raycast to see if it hit an object with the grapple tag.
 		if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range) && hit.transform.tag == "Grapple")
 		{
-			player.transform.position = Vector3.MoveTowards(transform.position, hit.transform.position, 5 * Time.deltaTime);
+			player.transform.position = Vector3.Lerp(player.transform.position, hit.transform.position, 5 * Time.deltaTime);
 		}
 	}
 
@@ -27,5 +27,4 @@ public class GrappleHook : MonoBehaviour, IWeapon
 	{
 		//Nothing
 	}
-
 }

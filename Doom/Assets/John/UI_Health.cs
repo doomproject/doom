@@ -11,22 +11,33 @@ public class UI_Health : MonoBehaviour
     public Text healthText;
     public Text shieldText;
 
-    private PlayerHealth player;
-    IWeapon weapon;
+	public Text ammoText;
+
+    private PlayerHealth playerHealth;
+	private Player_Input playerWeapon;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-        weapon = GameObject.FindGameObjectWithTag("Player").GetComponent<IWeapon>();
-    }
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+		playerWeapon = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Input>();
+	}
 
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = (float)player.currentHealth / player.maxHealth;
-        healthText.text = player.currentHealth.ToString();
-        shieldBar.fillAmount = (float)player.currentArmor / player.maxArmor;
-        shieldText.text = player.currentArmor.ToString();
-    }
+        healthBar.fillAmount = (float)playerHealth.currentHealth / playerHealth.maxHealth;
+        healthText.text = playerHealth.currentHealth.ToString();
+        shieldBar.fillAmount = (float)playerHealth.currentArmor / playerHealth.maxArmor;
+        shieldText.text = playerHealth.currentArmor.ToString();
+
+		if (playerWeapon.currWeapon.GetComponent<Gun>() != null)
+		{
+			ammoText.text = playerWeapon.currWeapon.GetComponent<Gun>().ammo.ToString();
+		}
+		else
+		{
+			ammoText.text = "0";
+		}
+	}
 }

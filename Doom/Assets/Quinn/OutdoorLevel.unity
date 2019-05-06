@@ -179,7 +179,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &12673260
 PrefabInstance:
@@ -2739,6 +2739,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7424125777018422471, guid: 21416ba37f0931a4a9d803684f84b8e5,
+        type: 3}
+      propertyPath: reloadTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7643663271155477696, guid: 21416ba37f0931a4a9d803684f84b8e5,
         type: 3}
       propertyPath: walkSpeed
@@ -2777,11 +2782,6 @@ PrefabInstance:
     - target: {fileID: 6404404004922852959, guid: 21416ba37f0931a4a9d803684f84b8e5,
         type: 3}
       propertyPath: fireInterval
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7424125777018422471, guid: 21416ba37f0931a4a9d803684f84b8e5,
-        type: 3}
-      propertyPath: reloadTime
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3486,6 +3486,7 @@ MonoBehaviour:
   shieldBar: {fileID: 1360045340}
   healthText: {fileID: 1412336443}
   shieldText: {fileID: 1647428228}
+  ammoText: {fileID: 1741501714}
 --- !u!1 &1000033330
 GameObject:
   m_ObjectHideFlags: 0
