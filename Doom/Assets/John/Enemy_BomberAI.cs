@@ -16,11 +16,13 @@ public class Enemy_BomberAI : MonoBehaviour
 
 	private GameObject player;
 	private NavMeshAgent agent;
+	private Animator anim;
 
 	void Awake()
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
 		agent = gameObject.GetComponent<NavMeshAgent>();
+		anim = gameObject.GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -34,10 +36,12 @@ public class Enemy_BomberAI : MonoBehaviour
 		}
 		else if (dist < distToMove)
 		{
+			anim.SetBool("isWalking", true);
 			agent.SetDestination(player.transform.position);
 		}
 		else
 		{
+			anim.SetBool("isWalking", false);
 			agent.SetDestination(this.transform.position);
 		}
 	}

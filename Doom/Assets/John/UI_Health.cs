@@ -13,14 +13,21 @@ public class UI_Health : MonoBehaviour
 
 	public Text ammoText;
 
+	private List<GameObject> gunList;
+	[SerializeField] GameObject[] icon;
+	private GameObject currIcon;
+
     private PlayerHealth playerHealth;
-	private Player_Input playerWeapon;
+	private PlayerInventory playerWeapon;
 
     // Start is called before the first frame update
     void Start()
     {
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-		playerWeapon = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Input>();
+		playerWeapon = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+
+		gunList = playerWeapon.weaponList;
+		currIcon = icon[0];
 	}
 
     // Update is called once per frame
@@ -31,13 +38,25 @@ public class UI_Health : MonoBehaviour
         shieldBar.fillAmount = (float)playerHealth.currentArmor / playerHealth.maxArmor;
         shieldText.text = playerHealth.currentArmor.ToString();
 
+		#region Player Icon Set
+		for (int i = 0; i < icon.Length; i++)
+		{
+			if (playerWeapon.currWeapon == playerWeapon.weaponList[i])
+			{
+				currIcon.gameObject.SetActive(false);
+				currIcon = icon[i];
+				currIcon.gameObject.SetActive(true);
+			}
+		}
+		#endregion
+
 		if (playerWeapon.currWeapon.GetComponent<Gun>() != null)
 		{
 			ammoText.text = playerWeapon.currWeapon.GetComponent<Gun>().ammo.ToString();
 		}
 		else
 		{
-			ammoText.text = "0";
+			ammoText.text = "-";
 		}
 	}
 }

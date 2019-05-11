@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     [Tooltip("The current weapon the player character is holding.")]
-    private GameObject currWeapon;
+    public GameObject currWeapon;
 
     [Tooltip("The list of weapons that the player has.")]
     public List<GameObject> weaponList;
