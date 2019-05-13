@@ -1,23 +1,35 @@
-https://www.vexels.com/png-svg/preview/147961/agm-shotgun-grey-silhouette - Shotgun Icon
+UI Assets:
 
-https://www.vexels.com/png-svg/preview/147998/glock-pistol-grey-silhouette - Pistol Icon
+AGM Shotgun Grey Silhouette and Glock Pistol Grey Silhouette from Vexels
 
-https://www.dafont.com/esper.font - Esper Font
+Esper Font by nmorse
 
-https://www.freepik.com/free-icon/bullet_871655.htm - Bullet Icon
+Bullet Icon from FreePix
 
-https://www.cmi-gear.com/products/grappling-hook-grhk - Grapple Hook Icon
+Grappling Hook from CMI Gear
 
-https://opengameart.org/content/assassin-bot - Robot Image
+Assassin Bot by Nicolas Nima
 
-https://www.flaticon.com/free-icon/knife-silhouette-in-diagonal-position_45228 - Knife Icon
+Knife Silhouette in Diagonal Position from FlatIcon
 
-https://pngtree.com/free-icon/weapon-mac_1078038 - SMG Icon
+Weapon Mac from PNGTree
 
-https://assetstore.unity.com/packages/2d/textures-materials/sci-fi-texture-pack-1-23301 - Sci-Fi Texture Pack 1 by Firebolt Studios
+Cityscape Photography Near Water by Pixabay
 
-https://assetstore.unity.com/packages/2d/textures-materials/yughues-free-sci-fi-decals-13322 - Yughues Free Sci-Fi Decals by Nobiax
+Unity Assets:
 
-Terrain Toolkit
+Sci-Fi Texture Pack 1 by Firebolt Studios
 
-Rocks Pack
+Yughues Free Sci-Fi Decals by Nobiax
+
+Terrain Toolkit 2017 by Heparo
+
+Yughues Free Rocks Pack by Nobiax
+
+Ultimate VFX by Mirza Beig
+
+Mech Constructor: Spider and Tanks by Slava Z
+
+Sci-Fi Style Model Pack by karboosx
+
+Sci-Fi Weapons by Taylor Huff
