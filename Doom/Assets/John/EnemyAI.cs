@@ -27,11 +27,7 @@ public class EnemyAI : MonoBehaviour
 		{
 			agent.SetDestination(this.transform.position);
 
-			Vector3 targetDir = player.transform.position - transform.position;
-			Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, 5 * Time.deltaTime, 0.0f);
-
-			// Move our position a step closer to the target.
-			transform.rotation = Quaternion.LookRotation(newDir);
+			transform.LookAt(player.transform.position);
 		}
 		else if (dist < distToMove)
 		{
