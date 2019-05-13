@@ -54,6 +54,7 @@ public class Gun : MonoBehaviour, IWeapon
 				GameObject go = Instantiate(bullet, muzzleFlash.transform.position, muzzleFlash.transform.rotation);
 				go.GetComponent<Rigidbody>().velocity = (hit.point - transform.position).normalized * bulletSpeed;
 				Destroy(go, 5f);
+
 				EnemyHealth EH = hit.transform.GetComponent<EnemyHealth>();
                 if (EH != null)
                 {
