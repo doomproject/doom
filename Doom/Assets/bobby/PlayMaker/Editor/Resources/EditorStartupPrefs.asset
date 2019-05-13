@@ -16,5 +16,13 @@ MonoBehaviour:
   playmakerVersion: 
   showWelcomeScreen: 1
   showUpgradeGuide: 0
+<<<<<<< HEAD
   lastAutoUpdateSignature: 2018.3.1f1__C:/Users/svc-student/Documents/doom/Doom/Assets__0.0.0.0
+=======
+<<<<<<< HEAD
+  lastAutoUpdateSignature: 2018.3.1f1__C:/Users/svc-student/Documents/doom/Doom/Assets__0.0.0.0
+=======
+  lastAutoUpdateSignature: 2018.3.1f1__C:/Users/svc-student/Desktop/New folder/Doom/Assets__0.0.0.0
+>>>>>>> f061f967903c0b360c38e17929d1f594a8c5516e
+>>>>>>> b2e423ff2791c94390fc9229698389acc9802765
   useLegacyNetworking: 0
